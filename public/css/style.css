@@ -1,0 +1,18 @@
+.avatar {
+  max-width: 100px;
+}
+
+.chatbox {
+  border: 2px solid #000;
+  border-radius: 7px;
+}
+
+.chat {
+
+  overflow: scroll;
+  height: 400px;
+}
+
+input {
+  height: 35px
+}

@@ -1,0 +1,13 @@
+<h1>You're a part of these conversations!</h1>
+
+<div class="chatBox" ng-repeat="conversation in conversations">
+  <h3>Conversation Between {{conversation.users[0].displayName}} And
+    {{conversation.users[1].displayName}}</h3>
+
+  <div class="chat">
+    <h4  ng-repeat="message in conversation.messages">{{message.messageText}}</h4>
+  </div>
+  <input class='col-xs-11'  type="text" name="message" ng-model=conversation.message> 
+  <button class="col-xs-1 btn btn-primary" ng-click="sendMessage(conversation)">Send!</button>
+
+</div>

@@ -1,0 +1,35 @@
+doctype html(lang='en')
+html
+  head
+    meta(charset='UTF-8')
+    title Social Login
+    link(href='css/style.css', rel='stylesheet')
+    link(rel="stylesheet",
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", media="all")
+  body(ng-app='conversationsApp')
+    div(ng-controller='navCtrl')
+      button.btn.btn-success(ui-sref='home') home
+
+      span(ng-if='!isAuthenticated()')
+        button.btn.btn-success(ui-sref='login') login
+
+      span(ng-if='isAuthenticated()')
+        button.btn.btn-success(ui-sref='profile') profile
+        button.btn.btn-success(ui-sref='conversations') Conversations
+        button.btn.btn-success(ui-sref='people') People
+        button.btn.btn-success(ng-click='logout()') logout
+
+    ui-view
+
+    script(src='vendor/jquery/dist/jquery.min.js')
+    script(src='vendor/angular/angular.js')
+    script(src='vendor/angular-ui-router/release/angular-ui-router.min.js')
+    script(src='vendor/satellizer/satellizer.min.js')
+    script(src='vendor/socket.io-client/socket.io.js')
+    script(src='js/module.js')
+    script(src='js/controllers/login.js')
+    script(src='js/controllers/home.js')
+    script(src='js/controllers/profile.js')
+    script(src='js/controllers/nav.js')
+    script(src="js/controllers/conversations.js")
+    script(src="js/controllers/people.js")
